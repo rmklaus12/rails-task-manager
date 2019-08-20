@@ -1,0 +1,10 @@
+<h2>My tasks</h2>
+ga
+<% @tasks.each do |task| %>
+  <ul>
+    <li style=list-style:none>
+      <%= check_box_tag 'task_ids[]', task.id -%>
+      <%= task.title %>
+    </li>
+  </ul>
+<% end %>
