@@ -1,10 +1,12 @@
 <h2>My tasks</h2>
-ga
+
 <% @tasks.each do |task| %>
   <ul>
     <li style=list-style:none>
-      <%= check_box_tag 'task_ids[]', task.id -%>
-      <%= task.title %>
+      <%= check_box_tag 'task_ids[]', task.id %>
+      <%= link_to task.title, task_path(task) %>
     </li>
   </ul>
 <% end %>
+
+<p><%= link_to "Add new task", {:action => 'new' }%></p>
